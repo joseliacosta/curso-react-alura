@@ -35,10 +35,10 @@ class FormularioAutor extends Component {
     event.preventDefault();
     console.log('dados sendo enviados');
     $.ajax({
-      url:'http://localhost:8080/api/autores',
+      url:'http://viacep.com.br/ws/'+09861160+'/json/?callback=callback_name',
       //url: 'https://cdc-react.herokuapp.com/api/autores',
       contentType: 'application/json',
-      dataType: 'json',
+      dataType: 'jsonp',
       type: 'post',
       data: JSON.stringify({nome:this.state.nome, email:this.state.email, senha:this.state.senha}),
       success: function(novaListagem){
@@ -58,13 +58,15 @@ class FormularioAutor extends Component {
   }
 
 
+
+
   render() {
     return(
 
 
       <div className="pure-form pure-form-aligned">
         <form className="pure-form pure-form-aligned"
-              onSubmit={this.enviaForm}>
+              onSubmit={this.enviaForm(09861160)}>
           <InputCustom label="Nome"
                        id="nome"
                        type="text"
