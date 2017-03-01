@@ -154,7 +154,7 @@ export default class LivroBox extends Component {
       url: 'https://cdc-react.herokuapp.com/api/autores',
         dataType: 'json',
         success:function(resposta){
-          console.log("fiz a 2a. chamada");
+
           this.setState({autores:resposta});
         }.bind(this)
       }

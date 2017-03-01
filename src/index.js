@@ -12,8 +12,8 @@ ReactDOM.render(
   (<Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
-      <Route path="/autor" component={AutorBox}/>
-      <Route path="/livro" component={LivroBox}/>
+      <Route path="autor" component={AutorBox}/>
+      <Route path="livro" component={LivroBox}/>
     </Route>
   </Router>),
   document.getElementById('root')

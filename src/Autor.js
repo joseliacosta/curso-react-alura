@@ -35,8 +35,8 @@ class FormularioAutor extends Component {
     event.preventDefault();
     console.log('dados sendo enviados');
     $.ajax({
-      url:'http://viacep.com.br/ws/'+09861160+'/json/?callback=callback_name',
-      //url: 'https://cdc-react.herokuapp.com/api/autores',
+
+      url: 'https://cdc-react.herokuapp.com/api/autores',
       contentType: 'application/json',
       dataType: 'jsonp',
       type: 'post',
@@ -57,16 +57,13 @@ class FormularioAutor extends Component {
     })
   }
 
-
-
-
   render() {
     return(
 
 
       <div className="pure-form pure-form-aligned">
         <form className="pure-form pure-form-aligned"
-              onSubmit={this.enviaForm(09861160)}>
+              onSubmit={this.enviaForm}>
           <InputCustom label="Nome"
                        id="nome"
                        type="text"
@@ -136,8 +133,7 @@ export default class AutorBox extends Component{
 
   componentDidMount() {
     $.ajax({
-      url:'http://localhost:8080/api/autores',
-      //url: 'https://cdc-react.herokuapp.com/api/autores',
+      url: 'https://cdc-react.herokuapp.com/api/autores',
         dataType: 'json',
         success: function (resposta) {
           this.setState({lista: resposta});
